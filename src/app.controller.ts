@@ -16,6 +16,7 @@ export class AppController {
   }
 
   @Get('report')
+  @Render('index')
   summarized() {
     return this.appService.summarized();
   }

@@ -7,7 +7,41 @@
 </head>
 
 <body>
-  <%= _sum.subscribers %>
+
+  <ul>
+
+
+    <% data.forEach(element=> { %>
+      <li>
+        <span>
+          region:
+          <%= element.region %>
+        </span>
+        <br>
+        <span>
+          subscribers:
+          <%= element._sum.subscribers %>
+        </span>
+        <br>
+
+
+        <span>
+          units:
+          <%= element._sum.units %>
+        </span>
+
+        <br>
+
+        <span>
+          item:
+          <%= element._sum.item %>
+        </span>
+
+      </li>
+      <% }) %>
+
+  </ul>
+
 </body>
 
 </html>

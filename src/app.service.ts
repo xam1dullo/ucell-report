@@ -97,15 +97,25 @@ export class AppService {
     // });
 
     // return result;
-    return this.prisma.ucell.aggregate({
-      where: {
-        region: {
-          in: this.regions,
-        },
-      },
+    // return this.prisma.ucell.aggregate({
+    //   where: {
+    //     region: {
+    //       in: this.regions,
+    //     },
+    //   },
+    //   _sum: {
+    //     subscribers: true,
+    //   },
+    // });
+    const result = await this.prisma.ucell.groupBy({
+      by: ['region'],
       _sum: {
         subscribers: true,
+        item: true,
+        units: true,
       },
     });
+    console.log(result);
+    return { data: result };
   }
 }

@@ -18,7 +18,8 @@
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
-    "prod": "pm2 kill && pm2 start dist/main.js --name ucell"
+    "prod": "pm2 kill && pm2 start dist/main.js --name ucell",
+    "kill": "pm2 kill"
   },
   "dependencies": {
     "@nestjs/common": "^11.0.1",
