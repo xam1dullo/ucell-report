@@ -1,4 +1,4 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Render } from '@nestjs/common';
 import { AppService } from './app.service';
 
 @Controller()
@@ -15,7 +15,7 @@ export class AppController {
     return this.appService.saveMockData();
   }
 
-  @Get('summarized')
+  @Get('report')
   summarized() {
     return this.appService.summarized();
   }
@@ -23,5 +23,11 @@ export class AppController {
   @Get('remove')
   removeMockData() {
     return this.appService.removeMockData();
+  }
+
+  @Get('ejs')
+  @Render('index')
+  root() {
+    return this.appService.summarized();
   }
 }
