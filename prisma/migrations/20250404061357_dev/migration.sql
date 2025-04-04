@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE "Ucell" ALTER COLUMN "subscribers" SET DATA TYPE DECIMAL(65,30);
